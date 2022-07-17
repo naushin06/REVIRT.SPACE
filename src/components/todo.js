@@ -12,62 +12,12 @@ function deleteHandler(params) {
 }
     const completeHandler=()=>{
         console.log(todo.key); 
-        // db.collection("todolist").doc(todo.key).update({
-        //         completed:!todo.completed
-        //     })
+        db.collection("todolist").doc(todo.key).update({
+                completed:!todo.completed
+            })
 
         setTodos(todos.map((item) =>{
-          let truthei=item.completed;
-          console.log(todos);
-console.log(item.key);
-db.collection("todolist").doc(todos.key).update({
-    completed:!truthei
-})
-
-
-let nau=todos.completed;
-
-switch (nau){
-    case true:
-        db.collection("todolist").doc(todos.key).update({
-            completed:!nau
-        })
-        break;
-        case false:
-        db.collection("todolist").doc(todos.key).update({
-            completed:!nau
-        })
-      
-        break;
-    default:
-        return 0;
-        
-  }
-
-
-
-        //  if(item.id===todo.id){
-            // switch (truthei){
-            //     case true:
-            //         db.collection("todolist").doc(item.key).update({
-            //             completed:!truthei
-            //         })
-            //         return 0
-
-            //         case false:
-            //         db.collection("todolist").doc(item.key).update({
-            //             completed:!truthei
-            //         })
-            //  return 0
-            //     default:
-            //         return 0;
-                    
-            //   }
-        //  }
-
-
-
-
+          let truthei=item.completed
            
         if(item.completed === true)
         { 
